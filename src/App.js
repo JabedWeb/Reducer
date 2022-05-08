@@ -2,7 +2,9 @@
 
 function App() {
   return (
-   <h1>Hello Bangladesh</h1>
+   <>
+   <p>Lorem inputs</p>
+   </>
   );
 }
 
