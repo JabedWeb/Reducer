@@ -1,11 +1,15 @@
+//import Forms from "./Components/Form";
+import RadioButton from "./Components/RadioButton";
 
 
 function App() {
   return (
    <>
 
-   <p>Lorem inputs</p>
-   
+  <RadioButton/>
+
+   {/* <Forms/> */}
+
    </>
   );
 }
