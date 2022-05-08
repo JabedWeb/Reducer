@@ -3,19 +3,25 @@ import { Col,Row, Container} from 'react-bootstrap'
 
 const RadioButton = () => {
 
-    //catch the radio button value for normal Form
+    //catch the radio button a value from normal Form
   const [radiobutton,setRadiobutton]=useState('Male')
 
 
 
-    //catch the radio button value for normal Form
+    //catch the radio button data from a normal form
     const [radioGet,setRadioGet]=useState({
-        name : '',
+        names : '',
         developerGender : ''
     })
 
-    const {name,developerGender}=radioGet
+    const {names,developerGender}=radioGet
+  const handleButton= (e)=>{
+      setRadioGet({
+          ...radioGet,
+        developerGender : e.target.value
 
+      })
+  }
 
   return (
   <>
@@ -49,24 +55,24 @@ const RadioButton = () => {
         <Row className='mt-4'>
             <Col>
             <form>
-                <input type="text" value={name} onChange={e=> setRadioGet({...radioGet,name : e.target.value})} />
+                <input type="text" value={names} onChange={e=> setRadioGet({...radioGet,names : e.target.value})} />
                 <div>
                     <h3>Type Your Gender : More data Get</h3>
                     <br/>
                     <label>Male :</label>
-                    <input name='gender' value='Male'  type="radio" />
+                    <input name='gender' value='Male'  type="radio" onChange={handleButton} />
                     <br />
 
                     <label>Male :</label>
-                    <input  name='gender' value='Female' type="radio"/>
+                    <input  name='gender' value='Female' type="radio" onChange={handleButton}/>
                     <br />
 
                     <label>Other :</label>
-                    <input name='gender' value='Other' type="radio" />
+                    <input name='gender' value='Other' type="radio" onChange={handleButton} />
                 </div>
                 <hr />
                 <h4>Live Output</h4>
-                <p>Developer Name : {name} </p>
+                <p>Developer Name : {names} </p>
                 <p>Developer Gender :{developerGender} </p>
             </form>
             </Col>
