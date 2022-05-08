@@ -14,13 +14,15 @@ const CheckboxForm = () => {
             <Col>
             <form>
                 <div>
-                    <h3>Type Your Gender : Only Value Data Get</h3>
+                    <h3>Check your skill</h3>
                     <br/>
-                    <label>Male :</label>
+                    <label>Skill</label>
                     <input onChange={e=> setRadiobutton(e.target.checked)}  type="checkbox" checked={radiobutton}/>
                     <br />
                 </div>
                 <p>Gender :{radiobutton ? "Yes" : "No"}  </p>
+
+                
 
             </form>
             </Col>

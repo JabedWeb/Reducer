@@ -1,0 +1,19 @@
+{
+  "Skills": [
+    {
+      "id": 1,
+      "name": "okkk",
+      "gender": "Female"
+    },
+    {
+      "id": 2,
+      "name": "Saki Salma",
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "name": "Khaldeda Zia",
+      "gender": "Female"
+    }
+  ]
+}

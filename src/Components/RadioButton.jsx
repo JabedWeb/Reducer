@@ -1,5 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
-import { Col,Row, Container} from 'react-bootstrap'
+import { Col,Row, Container, Button} from 'react-bootstrap'
 
 const RadioButton = () => {
 
@@ -21,6 +22,20 @@ const RadioButton = () => {
         developerGender : e.target.value
 
       })
+  }
+
+  const handleForm =(e)=>{
+        e.preventDefault()
+        axios.post('http://localhost:5050/Skills',{
+            id : '',
+            name : names,
+            gender : developerGender
+        }).then(res=>{
+            setRadioGet({
+                names : '',
+                developerGender : ''
+            })
+        })
   }
 
   return (
@@ -54,7 +69,7 @@ const RadioButton = () => {
     <Container>
         <Row className='mt-4'>
             <Col>
-            <form>
+            <form onSubmit={handleForm}>
                 <input type="text" value={names} onChange={e=> setRadioGet({...radioGet,names : e.target.value})} />
                 <div>
                     <h3>Type Your Gender : More data Get</h3>
@@ -63,7 +78,7 @@ const RadioButton = () => {
                     <input name='gender' value='Male'  type="radio" onChange={handleButton} />
                     <br />
 
-                    <label>Male :</label>
+                    <label>Female :</label>
                     <input  name='gender' value='Female' type="radio" onChange={handleButton}/>
                     <br />
 
@@ -74,6 +89,7 @@ const RadioButton = () => {
                 <h4>Live Output</h4>
                 <p>Developer Name : {names} </p>
                 <p>Developer Gender :{developerGender} </p>
+                <Button type='submit'>Submit</Button>
             </form>
             </Col>
         </Row>
