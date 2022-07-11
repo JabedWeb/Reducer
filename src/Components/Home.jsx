@@ -3,16 +3,21 @@ import React, { useReducer } from 'react'
 import {Container,Col,Row,Card} from 'react-bootstrap'
 import { useState } from "react";
 
+
+const initialMessage="We Love Mern"
 // action catch data;
-const reducer= (state,action)=>{
-    return state =action.payload;
+// const messageReducer= (state,action)=>{
+//     return state =action.payload;
+// }
+const messageReducer= (state,{type,payload})=>{
+    return state =payload;
 }
 
 const Home = () => {
 
     //const [msg,setMsg]=useState('I love Reducer');
 
-    const [msg,dispatch]=useReducer(reducer,"I love you");
+    const [messageState,dispatch]=useReducer(messageReducer,initialMessage);
 
 
 
@@ -24,9 +29,9 @@ const Home = () => {
       <Card className="shadow">
         <Card.Body>
         {/* <input type="text" value={msg} onChange={(e)=> dispatch({type : '',payload : ''})} className="form-control"/> */}
-        <input type="text" value={msg} onChange={(e)=> dispatch({payload :e.target.value})} className="form-control"/>
+        <input type="text" value={messageState} onChange={(e)=> dispatch({ type : '', payload :e.target.value})} className="form-control"/>
         {/* <input type="text" value={msg} onChange={(e)=> dispatch({name : "Jabed",age : 20})} className="form-control"/> */}
-        <h1>{msg}</h1>
+        <h1>{messageState}</h1>
         </Card.Body>
       </Card>
     </Col>
