@@ -1,9 +1,14 @@
 
 //initial state
-export const initialMessage="We Love MERN_Stack";
+export const initialMessage={
+    name : 'alo',
+    age : 120,
+    skill : 'Ios Developer',
+};
 
 
 //message reducer
 export const messageReducer= (state,{type,payload})=>{
     return state =payload;
+    
 }
