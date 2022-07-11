@@ -9,6 +9,6 @@ export const initialMessage={
 
 //message reducer
 export const messageReducer= (state,{type,payload})=>{
-    return state =payload;
-    
+    return state ={...state,...payload};
+
 }
